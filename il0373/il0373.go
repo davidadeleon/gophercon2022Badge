@@ -110,7 +110,6 @@ func (d *Device) Initialize() {
 		Stride:   d.Width, // No Calc for this so default to width
 		Rotation: d.Rotation,
 	}
-
 	d.SetBlackBuffer(0, true)
 	d.SetColorBuffer(1, true)
 	d.HardwareReset()
@@ -284,10 +283,6 @@ func (d *Device) SetColorBuffer(index int, inverted bool) {
 	d.colorInverted = inverted
 }
 
-func ColorDup(f func(), color byte, args ...interface{}) {
-
-}
-
 func (d *Device) SetRotation(val int) {
 	d.blackFrameBuffer.SetRotation(val)
 	d.colorFrameBuffer.SetRotation(val)
@@ -405,5 +400,3 @@ func (d *Device) DisplayImage(imageWidth, imageHeight int, image [][]byte) {
 	}
 
 }
-
-func (d *Device) LoadImage()
